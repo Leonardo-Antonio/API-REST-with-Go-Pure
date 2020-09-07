@@ -2,6 +2,7 @@ package handler
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"strconv"
 
@@ -9,10 +10,10 @@ import (
 )
 
 type alumn struct {
-	storage Storage
+	storage AlumnStorage
 }
 
-func newAlumn(storage Storage) *alumn {
+func newAlumn(storage AlumnStorage) *alumn {
 	return &alumn{storage}
 }
 
@@ -110,6 +111,7 @@ func (a *alumn) create(w http.ResponseWriter, r *http.Request) {
 	}
 
 	err = a.storage.Create(alumn)
+	fmt.Println(alumn)
 	if err != nil {
 		response := NewResponse(Error, "Error en recuperar los datos", nil)
 		response.JSON(w, http.StatusInternalServerError)

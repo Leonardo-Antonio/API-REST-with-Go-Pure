@@ -17,7 +17,6 @@ var (
 // Mysql -> connection on database mysql
 type Mysql struct {
 	db *sql.DB
-	n  int
 }
 
 // NewMysql -> method contructor of the class Mysql
@@ -36,20 +35,10 @@ func NewMysql() *Mysql {
 }
 
 func createSingleInstance(db *sql.DB) *Mysql {
-	return &Mysql{db, 0}
+	return &Mysql{db}
 }
 
 // Pool .
 func (mysql *Mysql) Pool() *sql.DB {
 	return mysql.db
-}
-
-// Push .
-func (mysql *Mysql) Push() {
-	mysql.n++
-}
-
-// Get .
-func (mysql *Mysql) Get() int {
-	return mysql.n
 }

@@ -9,11 +9,11 @@ import (
 )
 
 const (
-	sqlCreate  = "INSERT INTO tb_alumnos VALUES(null, ?, ?, ? ,?)"
-	sqlGetAll  = "SELECT id, name, lastname, age, dni FROM tb_alumnos"
-	sqlGetByID = "SELECT id, name, lastname, age, dni FROM tb_alumnos WHERE id = ?"
-	sqlDelete  = "DELETE FROM tb_alumnos WHERE id = ?"
-	sqlUpdate  = "UPDATE tb_alumnos SET name = ?, lastname = ?, age = ?, dni = ? WHERE id = ?"
+	sqlCreate  = "INSERT INTO tb_alumns VALUES(null, ?, ?, ? ,?)"
+	sqlGetAll  = "SELECT id, name, lastname, age, dni FROM tb_alumns"
+	sqlGetByID = "SELECT id, name, lastname, age, dni FROM tb_alumns WHERE id = ?"
+	sqlDelete  = "DELETE FROM tb_alumns WHERE id = ?"
+	sqlUpdate  = "UPDATE tb_alumns SET name = ?, lastname = ?, age = ?, dni = ? WHERE id = ?"
 )
 
 // Alumn . (CRUD)
